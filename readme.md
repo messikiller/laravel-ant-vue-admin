@@ -6,14 +6,36 @@
 
 ```
 git clone https://github.com/messikiller/laravel-ant-vue-admin.git
+```
+
+配置 laravel 相关：
+
+```
 cd laravel-ant-vue-admin
 composer install
+cp .env.example .env
+php artisan key:generate
+```
+
+前端资源配置（推荐使用淘宝 npm 软件源）：
+
+```
 npm install
-npm run prop
+```
+
+本地开发环境可以使用：
+
+```
+npm run watch
+
+线上环境下使用：
+
+```
+npm run prod
 ```
 
 Enjoy It !
 
 ## License
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+[MIT license](https://opensource.org/licenses/MIT).
