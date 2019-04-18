@@ -17,6 +17,12 @@ const path = require('path');
 
 mix.js('resources/js/admin.js', 'public/js/admin.js')
 
+mix.options({
+  postCss: [
+    require('postcss-css-variables')()
+  ]
+})
+
 mix.webpackConfig({
   plugins: [],
   resolve: {
