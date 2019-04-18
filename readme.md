@@ -1,4 +1,4 @@
-### Laravel-Ant-Vue-Admin
+# Laravel-Ant-Vue-Admin
 
 基于 Laravel + Vue Ant Deisgn 的后台管理系统脚手架，支持 Vue + Vue-router + Vuex
 
@@ -27,6 +27,7 @@ npm install
 
 ```
 npm run watch
+```
 
 线上环境下使用：
 
