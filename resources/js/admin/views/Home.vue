@@ -4,7 +4,7 @@
       :trigger="null"
       collapsible
       v-model="collapsed"
-      :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0, zIndex: 2 }"
+      :style="{ overflow: 'auto', height: '100vh', position: 'fixed', left: 0, zIndex: 999 }"
     >
       <div class="logo"></div>
       <a-menu theme="dark" mode="vertical-right" style="border-left: 0;">
@@ -33,6 +33,11 @@
           :type="collapsed ? 'menu-unfold' : 'menu-fold'"
           @click="() => collapsed = !collapsed"
         />
+        <a-breadcrumb>
+          <a-breadcrumb-item><a href="#">首页</a></a-breadcrumb-item>
+          <a-breadcrumb-item><a href="#">用户管理</a></a-breadcrumb-item>
+          <a-breadcrumb-item>用户列表</a-breadcrumb-item>
+        </a-breadcrumb>
         <div style="flex: 1; text-align: right;">
           <a-dropdown placement="bottomLeft">
             <a-button style="height: 64px; border: 0;"><a-icon type="user" /> admin <a-icon type="down" /></a-button>
@@ -103,7 +108,7 @@ export default {
 #layout .trigger {
   font-size: 18px;
   margin-left: 20px;
-  line-height: 64px;
+  margin-right: 20px;
   cursor: pointer;
   transition: color .3s;
 }
@@ -125,6 +130,7 @@ export default {
 #main .header {
   display: flex;
   align-items: center;
+  z-index: 2;
 }
 
 #main .content {

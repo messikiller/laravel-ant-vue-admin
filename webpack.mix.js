@@ -16,6 +16,7 @@ const path = require('path');
 //    .sass('resources/sass/app.scss', 'public/css');
 
 mix.js('resources/js/admin.js', 'public/js/admin.js')
+mix.js('resources/js/login.js', 'public/js/login.js')
 
 mix.options({
   postCss: [

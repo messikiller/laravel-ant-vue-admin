@@ -62,9 +62,9 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div class="top-right links">
-                <a href="#">Home</a>
-                <a href="#">Login</a>
-                <a href="#">Register</a>
+                <a target="_blank" href="/">Home</a>
+                <a target="_blank" href="/admin">Admin</a>
+                <a target="_blank" href="/admin#/login">Login</a>
             </div>
 
             <div class="content">
@@ -73,9 +73,9 @@
                 </div>
 
                 <div class="links">
-                  <a target="blank" href="https://github.com/messikiller/laravel-ant-vue-admin">GitHub</a>
-                  <a target="blank" href="https://github.com/vueComponent/ant-design-vue">Ant-Design-Vue</a>
-                  <a target="blank" href="https://github.com/sendya/ant-design-pro-vue">Ant-Design-Vue-Pro</a>
+                  <a target="_blank" href="https://github.com/messikiller/laravel-ant-vue-admin">GitHub</a>
+                  <a target="_blank" href="https://github.com/vueComponent/ant-design-vue">Ant-Design-Vue</a>
+                  <a target="_blank" href="https://github.com/sendya/ant-design-pro-vue">Ant-Design-Vue-Pro</a>
                 </div>
             </div>
         </div>
