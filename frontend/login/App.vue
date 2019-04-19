@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <div class="container" @keyup.enter="handleClickLogin">
     <a-card style="width: 400px; border-radius: 0;">
       <div class="title">
         Laravel Ant Vue Admin
       </div>
       <div class="line">
-        <a-input placeholder="输入用户名" autofocus v-model="loginForm.userName">
+        <a-input placeholder="输入用户名" autofocus v-model="loginForm.username">
           <a-icon slot="prefix" type="user" />
         </a-input>
       </div>
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import { Modal } from 'ant-design-vue'
+
 export default {
   data () {
     return {
@@ -39,8 +41,32 @@ export default {
         password: ''
       }
     },
-    handleClickLogin: function () {
+    validateForm: function () {
+      return this.loginForm.username.length > 0 && this.loginForm.password.length > 0
+    },
+    handleClickLogin: async function () {
+      if (!this.validateForm()) {
+        Modal.info({
+          title: '提示',
+          content: '请填写完整后再提交！'
+        })
+        return false
+      }
+      const res = await this.$http({
+        method: 'post',
+        url: '/auth/login',
+        data: this.loginForm
+      })
 
+      if (res.data.code == 500) {
+        Modal.info({
+          title: '提示',
+          content: res.data.msg
+        })
+        return false
+      }
+
+      window.location.href = '/admin'
     }
   }
 }

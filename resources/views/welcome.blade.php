@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ config('app.name') }}</title>
 
         <!-- Styles -->
         <style>
@@ -64,7 +64,7 @@
             <div class="top-right links">
                 <a target="_blank" href="/">Home</a>
                 <a target="_blank" href="/admin">Admin</a>
-                <a target="_blank" href="/admin#/login">Login</a>
+                <a target="_blank" href="/login">Login</a>
             </div>
 
             <div class="content">

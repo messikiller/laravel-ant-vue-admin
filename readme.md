@@ -17,6 +17,12 @@ cp .env.example .env
 php artisan key:generate
 ```
 
+生成基础数据库：
+
+```
+php artisan migrate --seed
+```
+
 前端资源配置（推荐使用淘宝 npm 软件源）：
 
 ```

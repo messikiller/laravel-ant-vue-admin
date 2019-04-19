@@ -15,8 +15,8 @@ const path = require('path');
 // mix.js('resources/js/app.js', 'public/js')
 //    .sass('resources/sass/app.scss', 'public/css');
 
-mix.js('resources/js/admin.js', 'public/js/admin.js')
-mix.js('resources/js/login.js', 'public/js/login.js')
+mix.js('frontend/admin.js', 'public/js/admin.js')
+mix.js('frontend/login.js', 'public/js/login.js')
 
 mix.options({
   postCss: [
@@ -29,7 +29,7 @@ mix.webpackConfig({
   resolve: {
     extensions: ['.js', '.json', '.vue'],
     alias: {
-      '@': path.join(__dirname, './resources/js/admin')
+      '@': path.join(__dirname, './frontend/admin')
     }
   },
   output: {

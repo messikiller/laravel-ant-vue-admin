@@ -40,7 +40,9 @@
         </a-breadcrumb>
         <div style="flex: 1; text-align: right;">
           <a-dropdown placement="bottomLeft">
-            <a-button style="height: 64px; border: 0;"><a-icon type="user" /> admin <a-icon type="down" /></a-button>
+            <a-button style="height: 64px; border: 0;">
+              <a-icon type="user" />{{ user.nickname }} <a-icon type="down" />
+            </a-button>
             <a-menu slot="overlay" @click="handleClickUsername">
               <a-menu-item key="logout"><a-icon type="logout" />logout</a-menu-item>
             </a-menu>
@@ -68,18 +70,29 @@
 
 <script>
 export default {
+  async mounted () {
+    const res = await this.$http({
+      method: 'get',
+      url: '/index/me'
+    })
+    this.user = res.data.data
+  },
   data () {
     return {
       collapsed: false,
+      user: {
+        username: '',
+        nickname: ''
+      },
       siderMenus: [
-        { icon: 'user', title: 'aaaa' },
-        { icon: 'user', title: 'aaaa' },
+        { icon: 'user', title: 'menu1' },
+        { icon: 'user', title: 'menu2' },
         {
           icon: 'user',
-          title: 'aaaa',
+          title: 'submenu',
           children: [
-            { icon: 'user', title: 'bbb' },
-            { icon: 'user', title: 'ddd' }
+            { icon: 'user', title: 'sub1' },
+            { icon: 'user', title: 'sub2' }
           ]
         }
       ]
@@ -91,8 +104,12 @@ export default {
         this.handleLogout()
       }
     },
-    handleLogout: function () {
-      this.$router.push('/login')
+    handleLogout: async function () {
+      await this.$http({
+        method: 'post',
+        url: '/index/logout'
+      })
+      window.location.href = '/login'
     }
   }
 }
