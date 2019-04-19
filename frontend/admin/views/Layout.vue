@@ -51,14 +51,7 @@
       </a-layout-header>
       <a-layout-content class="content">
         <div :style="{ background: '#fff', padding: '24px' }">
-          ...<br />...<br />...<br />...<br />...<br />
-          ...<br />...<br />...<br />...<br />...<br />
-          ...<br />...<br />...<br />...<br />...<br />
-          ...<br />...<br />...<br />...<br />...<br />
-          ...<br />...<br />...<br />...<br />...<br />
-          ...<br />...<br />...<br />...<br />...<br />
-          ...<br />...<br />...<br />...<br />...<br />
-          ...<br />...<br />...<br />...<br />...<br />
+          <router-view />
         </div>
         <a-layout-footer class="footer">
           Ant Design Vue © Created by Messikiller
